@@ -1,7 +1,7 @@
 
 import pandas as pd
 import numpy as np
-from scipy.stats import anderson_ksamp
+from scipy import stats
 
 chat_id = 98268891 # Ваш chat ID, не меняйте название переменной
 
@@ -10,4 +10,4 @@ def solution(x: np.array, y: np.array) -> bool:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     
-    return anderson_ksamp([x, y]).pvalue < 0.01 # Ваш ответ, True или False
+    return stats.cramervonmises_2samp(x, y).pvalue < 0.01 # Ваш ответ, True или False
